@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                min-height: 100vh;
+                /* background: linear-gradient(to bottom left, black, rgb(116, 1, 1), rgba(0, 0, 0)); */
+                background: linear-gradient(to bottom right ,rgb(14, 0, 139),#3b0000, rgb(14, 0, 139));
+                /* background-color: #3b0000; */
+            }
+            /* body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background: linear-gradient(180deg, #1a1a1a 0%, #e6e6e6 100%);
+            } */
+            /* .dark-mode {
+                background-color: black;
+                color: white;
+            } */
+            body::-webkit-scrollbar {
+                display: none;
+            }
+            .container {
+                margin: 50px 0;
+                display: grid;
+                gap: 20px;
+                width: 100%;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                justify-items: center;
+                flex-wrap: wrap;
+                padding: 16px;
+                text-align: center;
+            }
+            .item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 250px;
+                /* width: 300px; */
+                flex-basis: 300px;
+                flex-grow: 1;
+                border-radius: 0px 30px 0px 30px;
+                /* background-color: rgba(255, 255, 255, 0.233); */
+                background-image: linear-gradient(to bottom left, rgb(116, 1, 1), black, black, rgb(116, 1, 1) );
+                padding: 16px;
+                z-index: 3;
+                /* animation-name: lex;
+                animation-timing-function: linear;
+                animation-timeline: view();
+                animation-fill-mode: forwards;
+                animation-range: entry 0% cover 40%; */
+            }
+            /* .title {
+                border-bottom: 1px solid white;
+            } */
+            .item h2 {
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                /* margin: 10px; */
+                color: white;
+                text-align: center;
+                font-size: 30px;
+            }
+            /* .item h4 {
+                margin: 10px 0 0 5px;
+                line-height: 30px;
+                color: white;
+                font-size: x-large;
+            } */
+            /* .item h4 span {
+                background-color: green;
+                border-radius: 50%;
+                margin-left: 10px;
+                padding: 6px;
+                font-size: 16px;
+                color: white;
+            } */
+            /* .apot {
+                border: none;
+                padding: 34px 0;
+            }
+            .res {
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+            } */
+            nav {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100px;
+                /* background-color: rgb(27, 27, 27);
+                background-color: black; */
+                background: rgb(15, 8, 8);
+                color: white;
+            }
+            /* nav h1 {
+                font-size: 35px;
+                /* text-align: left; */
+                /* line-height: 100px;
+                margin-left: 150px;
+            } */
+            @media (min-width: 340px) {
+
+                .container {
+                    grid-template-columns: 1fr;
+                }
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    height: 250px;
+                    width: 300px;
+                }
+                /* nav h1 {
+                    font-size: 35px;
+                    line-height: 100px;
+                    margin-left: 100px;
+                } */
+                .item h2 {
+                    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    margin: 10px;
+                    color: white;
+                    text-align: center;
+                    font-size: 20px;
+                }
+                /* .betinfo{
+                    line-height: 40px;
+                    margin: 10px auto;
+                    width: 150px;
+                } */
+                footer h1 {
+                    font-size: 35px;
+                }
+            }
+            @media screen and (min-width: 500px) {
+                .container {
+                    grid-template-columns: 1fr;
+                }
+                .item {
+                    height: 300px;
+                    width: 350px;
+                }
+                /* .betinfo{
+                    margin: 0px auto;
+                } */
+            }
+            @media screen and (min-width: 768px) {
+                .container {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .item {
+                    height: 350px;
+                    width: 250px;
+                }
+                .item h2 {
+                    font-size: 21px;
+                }
+                /* nav h1 {
+                    font-size: 35px;
+                    position: relative;
+                    top: 0;
+                    left: 350px;
+                    line-height: 100px;
+                    /* margin-left: 150px; 
+                } */
+            }
+            @media screen and (min-width: 900px) {
+                .container {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .item {
+                    height: 350px;
+                    width: 250px;
+                }
+                .item h2 {
+                    font-size: 21px;
+                }
+            }
+            @media screen and (min-width: 1000px) {
+                .container {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+                .item {
+                    height: 400px;
+                    width: 250px;
+                }
+                .item h2 {
+                    font-size: 21px;
+                }
+            }
+            @media screen and (min-width: 1280px) {
+                .container {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+                .item {
+                    height: 400px;
+                    width: 250px;
+                }
+                .item h2 {
+                    font-size: 20px;
+                }
+            }
+            .stoixima {
+                /* display: flex; */
+                justify-content: center;
+                position: relative;
+                top: 40px;
+                left: 0;
+                color: white;
+                background-color: rgb(116, 1, 1);
+                height: 40px;
+                width: 150px;
+                border: none;
+                cursor: pointer;
+                /* margin: auto; */
+                /* margin: 10px auto 0 auto; */
+                animation-name: lex;
+                animation-timing-function: linear;
+                animation-timeline: view();
+                animation-fill-mode: forwards;
+                /* animation-range: entry 0% cover 40%; */
+            }
+            /* @keyframes lex {
+                0% {
+                    box-shadow: none;
+                }
+                50% {
+                    box-shadow: 2px 2px 2px white;
+                }
+                100% {
+                    box-shadow: 6px 6px 6px white;
+                }
+            } */
+
+            /* .c-contain {
+                position: relative;
+                top: 0;
+                left: 30px;
+                display: flex;
+                margin: 100px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 30px;
+                height: 50px;
+                width: 100px;
+             }
+            form {
+                display: none;
+                text-align: center;
+                color: white;
+            }
+            form label {
+                margin: 16px;
+            }
+            .c-contain button {
+                color: white;
+                font-size: 20px;
+                padding: 16px;
+                border-radius: 30px;
+                background: transparent;
+                border: 1px solid white;
+            } */
+            span {
+                position: relative;
+                top: -3px;
+                background-color: green;
+                border-radius: 50%;
+                color: white;
+                font-size: 15px;
+                padding: 5px;
+                margin-left: 10px;
+            }
+            .stoixima {
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                /* font-family: sans-serif; */
+                margin: 10px auto;
+                align-self: center;
+                
+            }
+            .info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* margin-top: 100px; */
+                background: rgba(0, 0, 0, 0.2);
+                color: white;
+                text-align: center;
+                height: 150px;
+            }
+            footer {
+                background: rgb(15, 8, 8);
+                display: flex;
+                height: 200px;
+                color: white;
+                justify-content: center;
+                align-items: center;
+            }
+            footer h1 {
+                font-size: 35px;
+            }
+        </style>
+    </head>
+    <body class="dark-mode">
+        <nav>
+            <img src="/G__1_-removebg-preview.png" width="150px" height="150px">
+        </nav>
+        <!-- <div class="c-contain">
+            <button>Φίλτρα</button>
+            <form>
+                <label for="r1">Προβλέψεις</label>
+                <input type="radio" name="Προβλέψεις" id="r1" value="Στοιχημα">
+                <label for="r2">Παρολί</label>
+                <input type="radio" name="Προβλέψεις" id="r2" value="Παρολί">
+            </form>
+        </div> -->
+        <!-- <button onclick="myFunction()">ww</button> -->
+        <div class="info">
+            <h1>Featured Matches</h1>
+        </div>
+        <div class="container">
+            <div class="item">
+                <div class="title">
+                    <h2>ΡΑΘΙΝΓΚ ΝΤΕ ΦΕΡΟΛ</h2> 
+                    <h2>ΣΠΟΡΤΙΝΓΚ ΧΙΧΟΝ</h2>
+                </div>
+                <div class="apot">
+                    <button class="stoixima">Δες Τι Παίζεις</button>
+                    <!-- <h4 class="res">Σπόρτινγκ Χιχόν<span>✔</span></h4> -->
+                    <!-- <div class="betinfo">2.60</div> -->
+                </div>
+            </div>
+            <div class="item">
+                <div class="title">
+                    <h2>ΠΑΡΙ ΣΕΝ ΖΕΡΜΕΝ</h2> 
+                    <h2>ΙΝΤΕΡ ΜΑΙΑΜΙ</h2>
+                </div>
+                <div class="apot">
+                    <!-- <h4 class="res">Σκορ Πολλαπλών Επιλογών</h4>
+                    <h4 class="res">2-1, 3-1 ή 4-1</h4>
+                    <h4 style="margin: 60px auto 0 auto; font-size: 20px; font-weight: 500;">ΑΠΟΔΟΣΗ</h4> -->
+                    <div class="betinfo">
+                        <button class="stoixima">Δες Τι Παίζεις</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <footer>
+            <h1>Powered by GXX</h1>
+        </footer>
+        <script>
+            // function myFunction() {
+            //     const element = document.body;
+            //     element.classList.toggle("dark-mode");
+            // }
+        </script>
+    </body>
+</html>
