@@ -30,12 +30,12 @@
             .container {
                 margin: 50px 0;
                 display: grid;
-                gap: 20px;
+                gap: 30px;
                 width: 100%;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
                 justify-items: center;
                 flex-wrap: wrap;
-                padding: 16px;
+                padding: 50px;
                 text-align: center;
             }
             .item {
@@ -90,15 +90,17 @@
                 align-items: center;
                 font-weight: 500;
             } */
-            nav {
+            nav{
                 display: flex;
                 align-items: center;
                 width: 100%;
                 height: 100px;
+                padding: 16px;
                 /* background-color: rgb(27, 27, 27);
                 background-color: black; */
                 background: rgb(15, 8, 8);
                 color: white;
+                /* justify-content:flex-start; */
             }
             /* nav h1 {
                 font-size: 35px;
@@ -106,10 +108,29 @@
                 /* line-height: 100px;
                 margin-left: 150px;
             } */
+            /* nav ul {
+                position: relative;
+                top: 0;
+                left: 200px;
+                width: 200px;
+                list-style-type: none;
+            }
+            nav li {
+                display: inline;
+                margin: 16px;
+                font-size: 25px;
+            }
+            nav li a {
+                text-decoration: none;
+            } */
+            footer h1 {
+                font-size: 35px;
+            }
             @media (min-width: 340px) {
 
                 .container {
                     grid-template-columns: 1fr;
+                    padding: 16px;
                 }
                 .item {
                     display: flex;
@@ -127,7 +148,7 @@
                     margin: 10px;
                     color: white;
                     text-align: center;
-                    font-size: 20px;
+                    font-size: 18px;
                 }
                 /* .betinfo{
                     line-height: 40px;
@@ -135,8 +156,15 @@
                     width: 150px;
                 } */
                 footer h1 {
-                    font-size: 35px;
+                    font-size: 25px;
                 }
+                /* nav ul {
+                    position: relative;
+                    top: 0;
+                    left: 50px;
+                    width: 100px;
+                    list-style-type: none;
+                } */
             }
             @media screen and (min-width: 500px) {
                 .container {
@@ -149,10 +177,14 @@
                 /* .betinfo{
                     margin: 0px auto;
                 } */
+                footer h1 {
+                    font-size: 35px;
+                }
             }
             @media screen and (min-width: 768px) {
                 .container {
                     grid-template-columns: 1fr 1fr;
+                    padding: 60px;
                 }
                 .item {
                     height: 350px;
@@ -161,6 +193,16 @@
                 .item h2 {
                     font-size: 21px;
                 }
+                footer h1 {
+                    font-size: 35px;
+                }
+                /* nav ul {
+                    position: relative;
+                    top: 0;
+                    left: 200px;
+                    width: auto;
+                    list-style-type: none;
+                } */
                 /* nav h1 {
                     font-size: 35px;
                     position: relative;
@@ -181,6 +223,9 @@
                 .item h2 {
                     font-size: 21px;
                 }
+                footer h1 {
+                    font-size: 35px;
+                }
             }
             @media screen and (min-width: 1000px) {
                 .container {
@@ -192,6 +237,15 @@
                 }
                 .item h2 {
                     font-size: 21px;
+                }
+                footer h1 {
+                    font-size: 35px;
+                }
+                nav ul {
+                    position: relative;
+                    top: 0;
+                    left: 400px;
+                    list-style-type: none;
                 }
             }
             @media screen and (min-width: 1280px) {
@@ -301,14 +355,50 @@
                 justify-content: center;
                 align-items: center;
             }
-            footer h1 {
-                font-size: 35px;
+            .vip {
+                color:gold;
+                /* border-bottom: 1px solid gold; */
+                animation-name: vipation;
+                animation-duration: 1.5s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: infinite;
             }
+            @keyframes vipation {
+                100% {
+                    border-bottom: 1px solid gold;
+                }
+            }
+            /* #message {
+                display: none;
+                height: 400px;
+                width: 600px;
+                background-color: rgba(0, 0, 0, 0.753);
+                position: absolute;
+                margin: auto;
+                top: 400px;
+                left: 0;
+                right: 0;
+                z-index: 1111;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                border: 1px solid white;
+                border-radius: 50px;
+            }
+            #message h2{
+                font-size: 40px;
+            } */
         </style>
     </head>
     <body class="dark-mode">
         <nav>
             <img src="Images/G__1_-removebg-preview.png" width="150px" height="150px">
+            <!-- <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="vip" onclick="display()">VIP</a></li>
+            </ul> -->
         </nav>
         <!-- <div class="c-contain">
             <button>Φίλτρα</button>
@@ -356,13 +446,15 @@
             <div class="item"></div>
             <div class="item"></div>
         </div>
+        <!-- <div id="message">
+            <h2>Hello</h2>
+        </div> -->
         <footer>
             <h1>Powered by GXX</h1>
         </footer>
         <script>
-            // function myFunction() {
-            //     const element = document.body;
-            //     element.classList.toggle("dark-mode");
+            // function display() {
+            //     document.getElementById("message").style.display = "flex";
             // }
         </script>
     </body>
